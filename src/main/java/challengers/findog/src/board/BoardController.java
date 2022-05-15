@@ -31,11 +31,11 @@ public class BoardController {
      */
     @ApiOperation(value = "게시글 작성", notes = "body를 포함해서 post request를 보내면 postId와 userId를 리턴")
     @PostMapping("/post")
-    public BaseResponse<BoardRes> createBoard(@Valid @ModelAttribute PostBoardReq postBoardReq, BindingResult br) {
-        if (br.hasErrors()) {
-            String error = br.getAllErrors().get(0).getDefaultMessage();
-            return new BaseResponse<>(BaseResponseStatus.of(error));
-        }
+    public BaseResponse<BoardRes> createBoard(@Valid @ModelAttribute PostBoardReq postBoardReq) {
+//        if (br.hasErrors()) {
+//            String error = br.getAllErrors().get(0).getDefaultMessage();
+//            return new BaseResponse<>(BaseResponseStatus.of(error));
+//        }
 
         try {
             BoardRes boardRes = boardService.createBoard(postBoardReq);
