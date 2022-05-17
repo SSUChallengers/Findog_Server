@@ -98,4 +98,13 @@ public class AnimalService {
         }
     }
 
+    //유기동물 공고 상세 조회
+    public Animal getAnimalPost(int animalId) throws BaseException{
+        try{
+            return animalRepository.getAnimalPost(animalId);
+        } catch (Exception e){
+            throw new BaseException(DATABASE_ERROR);
+        }
+    }
+
 }

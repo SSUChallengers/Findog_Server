@@ -4,6 +4,7 @@ import challengers.findog.src.animal.model.Animal;
 import challengers.findog.src.animal.model.AnimalSimpleDto;
 import challengers.findog.src.animal.model.PageCriteriaDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -75,4 +76,9 @@ public class AnimalRepository {
         return jdbcTemplate.queryForObject(query, int.class);
     }
 
+    //유기동물 공고 상세 조회
+    public Animal getAnimalPost(int animalId){
+        String query = "select * from Animal where animalId = ?";
+        return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(Animal.class), animalId);
+    }
 }

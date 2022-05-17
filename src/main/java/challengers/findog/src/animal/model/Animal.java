@@ -28,4 +28,6 @@ public class Animal {
     private String careTel;
     private String careAddr;
     private String orgNm;
+
+    public Animal() {}
 }
