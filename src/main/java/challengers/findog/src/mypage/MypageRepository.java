@@ -76,7 +76,7 @@ public class MypageRepository {
                         rs.getInt("region"),
                         rs.getString("thumbnail"),
                         rs.getString("content"),
-                        rs.getTimestamp("postCreateAt"),
+                        rs.getString("postCreateAt"),
                         rs.getInt("likeCount"),
                         rs.getInt("commentCount"),
                         rs.getInt("hits")
@@ -105,7 +105,7 @@ public class MypageRepository {
                         rs.getInt("region"),
                         rs.getString("thumbnail"),
                         rs.getString("content"),
-                        rs.getTimestamp("postCreateAt"),
+                        rs.getString("postCreateAt"),
                         rs.getInt("likeCount"),
                         rs.getInt("commentCount"),
                         rs.getInt("hits")

@@ -28,7 +28,7 @@ public class Board {
     @ApiModelProperty(value = "게시글 내용", example = "내용입니다.", required = true)
     private String content;
     @ApiModelProperty(hidden = true)
-    private Timestamp postCreateAt;
+    private String postCreateAt;
     private Integer likeCount;
     private Integer commentCount;
     private int hits;
@@ -36,7 +36,7 @@ public class Board {
     public Board(){}
 
     public Board(int postId, int userId, String nickname, String userImgUrl, String title, int category, int region, String thumbnail, String content,
-                 Timestamp postCreateAt, int likeCount, int commentCount, int hits){
+                 String postCreateAt, int likeCount, int commentCount, int hits){
         this.postId = postId;
         this.userId = userId;
         this.nickname = nickname;
