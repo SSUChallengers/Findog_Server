@@ -23,7 +23,7 @@ public class AnimalRepository {
 
     //유기동물 공고 저장
     public int createAnimal(Animal animal){
-        String query = "insert into Animal(desertionNo, filename, happenDt, happenPlace, kindCd, colorCd, age, weight, noticeNo, noticeSdt, noticeEdt, popfile, processState, sexCd, neuterYn, specialMark, careNm, careTel, careAddr, orgNm) value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)";
+        String query = "insert ignore into Animal(desertionNo, filename, happenDt, happenPlace, kindCd, colorCd, age, weight, noticeNo, noticeSdt, noticeEdt, popfile, processState, sexCd, neuterYn, specialMark, careNm, careTel, careAddr, orgNm) value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Object[] params = new Object[]{
                 animal.getDesertionNo(),
                 animal.getFilename(),
@@ -64,7 +64,7 @@ public class AnimalRepository {
                         rs.getString("neuterYn"),
                         rs.getString("kindCd"),
                         rs.getString("happenDt"),
-                        rs.getString("orgNm"),
+                        rs.getString("careNm"),
                         rs.getString("happenPlace"),
                         rs.getString("popfile"),
                         rs.getInt("likeFlag")
@@ -116,7 +116,7 @@ public class AnimalRepository {
                         rs.getString("neuterYn"),
                         rs.getString("kindCd"),
                         rs.getString("happenDt"),
-                        rs.getString("orgNm"),
+                        rs.getString("careNm"),
                         rs.getString("happenPlace"),
                         rs.getString("popfile"),
                         rs.getInt("likeFlag")
@@ -144,7 +144,7 @@ public class AnimalRepository {
                         rs.getString("neuterYn"),
                         rs.getString("kindCd"),
                         rs.getString("happenDt"),
-                        rs.getString("orgNm"),
+                        rs.getString("careNm"),
                         rs.getString("happenPlace"),
                         rs.getString("popfile"),
                         rs.getInt("likeFlag")

@@ -100,6 +100,7 @@ public enum BaseResponseStatus {
     EMPTY_TITLE(false, 3207, "제목을 입력해주세요."),
     EMPTY_CATEGORY(false, 3208, "카테고리를 선택해주세요."),
     EMPTY_CONTENT(false, 3209, "내용을 입력해주세요."),
+    FAIL_DELETE_COMMENTS(false, 3210, "해당 게시글의 댓글들 삭제에 실패하였습니다."),
     EMPTY_REGION(false, 3211, "지역을 입력해주세요."),
 
 

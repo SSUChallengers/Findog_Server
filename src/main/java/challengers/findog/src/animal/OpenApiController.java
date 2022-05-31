@@ -3,6 +3,8 @@ package challengers.findog.src.animal;
 import challengers.findog.config.BaseException;
 import challengers.findog.config.BaseResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +18,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
 
+@Component
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/openApi")
@@ -24,6 +27,7 @@ public class OpenApiController {
     private final OpenApiService openApiService;
 
     //유기동물 조회
+    @Scheduled(cron = "0 0 12 * * ?")
     @GetMapping("animal")
     public BaseResponse<String> getAnimalOpenApi() throws IOException {
         StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic"); /*URL*/

@@ -367,4 +367,16 @@ public class BoardRepository {
                 "  and postCreateAt between STR_TO_DATE(?, '%Y%m%d') and STR_TO_DATE(concat(?, 235959), '%Y%m%d%H%i%s')";
         return jdbcTemplate.queryForObject(query, int.class, keyword, keyword, region, category, start_period, end_period);
     }
+
+    //해당 포스트의 모든 댓글 삭제
+    public int deleteCommentByPostId(int postId) {
+        String query = "delete from Comment where postId = ?";
+        return jdbcTemplate.update(query, postId);
+    }
+
+    //포스트 댓글 존재 여부 확인
+    public int existComment(int postId) {
+        String query = "select exists (select * from Comment where postId = ?)";
+        return jdbcTemplate.queryForObject(query, int.class, postId);
+    }
 }
