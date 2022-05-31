@@ -12,7 +12,7 @@ public class AnimalSimpleDto {
     private String neuterYn;
     private String kindCd;
     private String happenDt;
-    private String orgNm;
+    private String careNm;
     private String happenPlace;
     private String popfile;
 

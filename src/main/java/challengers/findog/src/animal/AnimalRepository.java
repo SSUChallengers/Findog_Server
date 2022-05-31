@@ -64,7 +64,7 @@ public class AnimalRepository {
                         rs.getString("neuterYn"),
                         rs.getString("kindCd"),
                         rs.getString("happenDt"),
-                        rs.getString("orgNm"),
+                        rs.getString("careNm"),
                         rs.getString("happenPlace"),
                         rs.getString("popfile"),
                         rs.getInt("likeFlag")
@@ -116,7 +116,7 @@ public class AnimalRepository {
                         rs.getString("neuterYn"),
                         rs.getString("kindCd"),
                         rs.getString("happenDt"),
-                        rs.getString("orgNm"),
+                        rs.getString("careNm"),
                         rs.getString("happenPlace"),
                         rs.getString("popfile"),
                         rs.getInt("likeFlag")
@@ -144,7 +144,7 @@ public class AnimalRepository {
                         rs.getString("neuterYn"),
                         rs.getString("kindCd"),
                         rs.getString("happenDt"),
-                        rs.getString("orgNm"),
+                        rs.getString("careNm"),
                         rs.getString("happenPlace"),
                         rs.getString("popfile"),
                         rs.getInt("likeFlag")
