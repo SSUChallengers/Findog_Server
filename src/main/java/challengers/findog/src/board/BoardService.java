@@ -107,9 +107,10 @@ public class BoardService {
     //게시글 삭제, 해당 게시글 댓글 함께 삭제
     @Transactional(rollbackFor = Exception.class)
     public void deleteBoard(int postId) throws BaseException {
-        //todo 댓글 삭제
-        if(boardRepository.deleteCommentByPostId(postId) == 0) {
-            throw new BaseException(FAIL_DELETE_COMMENTS);
+        if(boardRepository.existComment(postId) == 1) {
+            if (boardRepository.deleteCommentByPostId(postId) == 0) {
+                throw new BaseException(FAIL_DELETE_COMMENTS);
+            }
         }
         //이미지 삭제
         List<String> arr = boardRepository.checkImg(postId); //기존 저장된 img 유무 확인

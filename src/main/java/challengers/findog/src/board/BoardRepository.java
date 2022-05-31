@@ -373,4 +373,10 @@ public class BoardRepository {
         String query = "delete from Comment where postId = ?";
         return jdbcTemplate.update(query, postId);
     }
+
+    //포스트 댓글 존재 여부 확인
+    public int existComment(int postId) {
+        String query = "select exists (select * from Comment where postId = ?)";
+        return jdbcTemplate.queryForObject(query, int.class, postId);
+    }
 }
